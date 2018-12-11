@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+<a style="cursor:pointer;" class="navbar-brand">Recipes book</a>
+
+<button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbar">
+  <ul class="navbar-nav">
+    
+    <li class="nav-item"><a  style="cursor:pointer;"class="nav-link" routerLink="/recipes" roterLinkActive="active">Recipes</a></li>
+    <li class="nav-item"><a style="cursor:pointer;" class="nav-link" routerLink="/shoppinglist" roterLinkActive="active">Shopping List</a></li>
+   
+    
+    <!--</ul>
+  <ul class="navbar-nav navbar-collapse justify-content-end">-->
+    <li class="nav-item dropdown"  >
+      <a href="#" class="nav-link dropdown-toggle navbar-text" id="navbarDropdoown" data-toggle="dropdown">
+        Manage
+      </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a  class="dropdown-item">Save Data</a>
+      <a class="dropdown-item">Fetch Data</a>
+    </div>
+    </li>
+    <li class="nav-item"><a class="nav-link" *ngIf="!authService.isUserLoggdIn()" routerLink ="/signin">Login :)</a></li>
+    <li class="nav-item"><a class="nav-link" *ngIf="authService.isUserLoggdIn()" routerLink ="/recipes" (click)="onLoguot()">Logout :(</a></li>
+  
+    </ul>
+</div>
+</nav>
